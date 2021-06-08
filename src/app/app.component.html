@@ -1,0 +1,15 @@
+<router-outlet></router-outlet>
+
+<div [formGroup]="form">
+  <fm-toogle formControlName="agree" [label]="'after'">
+    Agree
+  </fm-toogle>
+</div>
+
+<p>
+  checked:
+  <span [ngClass]="{ 'green': form.value.agree, 'red': !form.value.agree }">{{ form.value.agree ? '&#10003;' : '&#10006;' }}</span>
+</p>
+
+Form group:
+<pre>{{ form.value | json }}</pre>
